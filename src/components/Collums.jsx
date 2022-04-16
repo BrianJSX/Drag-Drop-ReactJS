@@ -7,7 +7,7 @@ function Collums(props) {
 
 
   return (
-    <div className="collums flex-col m-2 w-[300px] border p-1 cursor-pointer bg-white">
+    <div className="collums flex-col m-2 w-[300px] border p-1 cursor-pointer bg-white h-[300px] overflow-y-auto">
       <div className="flex">{item?.name}</div>
       <Container
         groupName="col"
@@ -15,8 +15,8 @@ function Collums(props) {
         getChildPayload={(index) => getCardPayload(item.collum_id, index)}
         dropPlaceholder={{
           animationDuration: 150,
-          showOnTop: true,
-          className: "w-full border-[1px] bg-blue-100",
+          // showOnTop: true,
+          className: "w-full border-black bg-blue-100 ",
         }}
       >
         {item.cards.map((data, index) => {

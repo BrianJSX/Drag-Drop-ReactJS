@@ -89,10 +89,9 @@ function Dashboard() {
     if (dropResult.removedIndex != null || dropResult.addedIndex != null) {
     //   console.log(">>>> inside function:" + collumId, dropResult);
         let newData = [...data];
-        let collumIndex = newData.findIndex((data) => data.collum_id == collumId);
-        let currentCollum = newData.find((data) => data.collum_id == collumId);
+        let collumIndex = newData.findIndex((data) => data.collum_id === collumId);
+        let currentCollum = newData.find((data) => data.collum_id === collumId);
         currentCollum.cards = applyDrag(currentCollum.cards, dropResult);
-        // newData.slice(collumIndex);
         newData.splice(collumIndex, 1, currentCollum);
         setData(newData);
     }
@@ -101,7 +100,7 @@ function Dashboard() {
   const getCardPayload = (collumId, index) => {
     let newData = [...data];
     let currentCollum = newData.find(
-      (collum) => collum.collum_id == collumId
+      (collum) => collum.collum_id === collumId
     );
     return currentCollum.cards[index];
   };
